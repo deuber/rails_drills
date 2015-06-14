@@ -1,10 +1,16 @@
 rails new blog_1 -T -d postgresql;
 cd blog_1/
 rake db:create
+
 rails g model user email:string first_name:string last_name:string password_digest:string
-rails g model article title:string content:string 
+rails g model article title:string content:string
+
 rake db:migrate
+
 rails g controller sites index about contact
+rails g controller articles new show create index edit update destroy
+rails g controller users
+
 e config/routes.rb
 
 add this

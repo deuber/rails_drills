@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :logged_in?
-  before_action :find_user_article, only: [:edit, :update, :destroy]
+  #before_action :find_user_article, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -37,11 +37,11 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :content)
     end
 
-    def find_user_article
-      @article = current_user.articles.find_by({id: params[:id]})
-      unless @article
-        redirect_to user_path(current_user)
-      end
-    end
+    # def find_user_article
+    #   @article = current_user.articles.find_by({id: params[:id]})
+    #   unless @article
+    #     redirect_to user_path(current_user)
+    #   end
+    # end
 
 end
