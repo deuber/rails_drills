@@ -1,0 +1,5 @@
+<% @articles.each do |article| %>
+  <p> <%= article.title %> </p>
+  <p> <%= article.content %></p>
+  <%= button_to "Delete", article_path(article), method: :delete %>
+<% end %>
