@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  validates :email, presence: true, uniqueness: true
+
 	has_many :articles
 	has_secure_password
 	def self.confirm(params)
